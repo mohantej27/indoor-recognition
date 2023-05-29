@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image and Audio Display</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- <link rel="stylesheet" href="/static/style.css"> -->
+</head>
+<body style="background-image: url('{{ url_for('static', filename='capture.jpg') }}');">
+  <p><h1 style="color: antiquewhite; padding-left: 40%;"><b><u><i>Review Results </i></u></b></h1></p>
+  <div style="display: flex;">
+    <div class="res-container col-md-6 col-xs-12" style = "padding-right: 10cm; padding-left: 3cm;">
+      <div class="result-box shadow rounded-lg" >
+        <h1 class="title"style="color: antiquewhite; padding-left: 3cm;">Image Prediction Results</h1>
+        <div id="image-container">
+          <img id="prediction-image" src="{{ url_for('static', filename='recognized/recognized.jpg') }}" alt="Prediction Image" />
+        </div>
+      </div>
+    </div>
+   
+    <div style="padding-top: 0cm;">
+      <div>
+        <h1 class="title" style="color: antiquewhite;">Audio Prediction Results</h1>
+        <audio controls style="padding-left: 0.5cm;">
+          <source src="{{ url_for('static', filename='recognized/recognized.mp3') }}" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<style>
+  html,
+body {
+  height: 100%;
+}
+
+body {
+
+  -ms-flex-align: center;
+  align-items: top;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+
+
+</style>
